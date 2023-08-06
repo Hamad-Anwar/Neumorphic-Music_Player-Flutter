@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 class HomeController extends GetxController{
@@ -41,12 +43,17 @@ class HomeController extends GetxController{
     player.seek( Duration(seconds: player.position.inSeconds-10));
   }
 
+
+  int i=0;
   setProgress(){
-    progress.value=player.position.inSeconds/player.duration!.inSeconds;
-    currentLength.value='${player.position.inMinutes.toString()}:${(player.position.inSeconds % 60).toString()}';
-    if(currentLength==totalLength){
-      player.stop();
-      isPlaying.value=false;
-    }
+
+        progress.value=player.position.inSeconds/player.duration!.inSeconds;
+        currentLength.value='${player.position.inMinutes.toString()}:${(player.position.inSeconds % 60).toString()}';
+        if(currentLength==totalLength){
+          player.stop();
+          isPlaying.value=false;
+        }
+
+
   }
 }

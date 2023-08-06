@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:untitled/view/common_widget/soft_control.dart';
 import 'package:untitled/view/Home/file_list.dart';
+
 import '../../res/constants.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,6 +18,26 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 2),() {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AudioList(),));
     },);
+
+
+    // //memory
+    // final _intentDataStreamSubscription =
+    //     ReceiveSharingIntent.getMediaStream().listen((List<SharedMediaFile> value) {
+    //       Get.to(PlayerPage(file:
+    //       AudioFiles(name: value[0].type.name, path: value[0].path, size: value[0].duration!), tag: ""));
+    //     }, onError: (err) {
+    //       print("getIntentDataStream error: $err");
+    //     });
+    //
+    // //closed
+    // ReceiveSharingIntent.getInitialMedia().then((List<SharedMediaFile> value) {
+    //   Get.to(PlayerPage(file:
+    //   AudioFiles(name: value[0].type.name, path: value[0].path, size: value[0].duration!), tag: ""));
+    // });
+    //
+
+
+
   }
   @override
   Widget build(BuildContext context) {

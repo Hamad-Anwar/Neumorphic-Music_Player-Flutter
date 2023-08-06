@@ -21,9 +21,6 @@ class BottomPlayerController extends GetxController{
         {
           temp=temp.substring(0,19);
         }
-
-
-
       fileName.value=temp;
       playSong();
     });
@@ -46,13 +43,15 @@ class BottomPlayerController extends GetxController{
   }
 
   setProgress(){
-    if(player.playerState.playing){
-      progress.value=player.position.inSeconds/player.duration!.inSeconds;
-      currentLength.value='${player.position.inMinutes.toString()}:${(player.position.inSeconds % 60).toString()}';
-      if(currentLength==totalLength){
-        player.stop();
-        isPlaying.value=false;
-      }
+
+      if(player.playerState.playing){
+        progress.value=player.position.inSeconds/player.duration!.inSeconds;
+        currentLength.value='${player.position.inMinutes.toString()}:${(player.position.inSeconds % 60).toString()}';
+        if(currentLength==totalLength){
+          player.stop();
+          isPlaying.value=false;
+        }
+
     }
   }
 }

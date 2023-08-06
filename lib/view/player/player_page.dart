@@ -32,7 +32,9 @@ class PlayerPageState extends State<PlayerPage>
     animationController.forward();
     animationController.addListener(() {
       controller.angle.value = animationController.value;
-      controller.setProgress();
+
+        controller.setProgress();
+
       if (animationController.isCompleted && controller.isPlaying.isTrue) {
         animationController.repeat();
       }

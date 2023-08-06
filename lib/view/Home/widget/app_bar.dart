@@ -14,9 +14,14 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          CircularSoftButton(
-            radius: 25,
-            icon: const Icon(Icons.arrow_back_ios_new_outlined,size: 20,),
+          GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: CircularSoftButton(
+              radius: 25,
+              icon: const Icon(Icons.arrow_back_ios_new_outlined,size: 20,),
+            ),
           ),
           const Text('Audio Files',style: TextStyle(fontWeight: FontWeight.bold),),
           GestureDetector(
