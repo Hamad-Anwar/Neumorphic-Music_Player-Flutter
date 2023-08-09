@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled/controller/file_list_controller.dart';
-import 'package:untitled/view/Home/widget/app_bar.dart';
-import 'package:untitled/view/Home/widget/bottom_player.dart';
-import 'package:untitled/view/Home/widget/list_view.dart';
-import '../../controller/bottom_player_controller.dart';
+import 'package:untitled/view/audio_list/widget/app_bar.dart';
+import 'package:untitled/view/audio_list/widget/bottom_player.dart';
+import 'package:untitled/view/audio_list/widget/list_view.dart';
 import '../../res/app_path.dart';
 import '../../res/constants.dart';
+import '../../view_model/controller/bottom_player_controller.dart';
+import '../../view_model/controller/file_list_controller.dart';
+
 
 class AudioList extends StatefulWidget {
   final String path;

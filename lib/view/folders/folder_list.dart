@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled/controller/folder_controller.dart';
 import 'package:untitled/res/constants.dart';
 import 'package:untitled/view/folders/widget/app_bar.dart';
 import 'package:untitled/view/folders/widget/folder_list.dart';
+import '../../view_model/controller/folder_controller.dart';
 
 
 class FolderList extends StatefulWidget {
@@ -26,10 +26,10 @@ class _FolderListState extends State<FolderList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: SafeArea(
+      body: const SafeArea(
         child: Column(
           children: [
-            const CustomAppBar(),
+            CustomAppBar(),
             Folders()
           ],
         ),

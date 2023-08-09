@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:untitled/controller/bottom_player_controller.dart';
-import '../../../controller/file_list_controller.dart';
+
+import '../../../view_model/controller/bottom_player_controller.dart';
+import '../../../view_model/controller/file_list_controller.dart';
 import '../../common_widget/soft_control.dart';
 
 class BottomPlayer extends StatefulWidget {

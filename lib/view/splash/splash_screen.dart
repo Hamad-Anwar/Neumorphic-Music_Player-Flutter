@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:untitled/view/common_widget/soft_control.dart';
-import 'package:untitled/view/Home/file_list.dart';
-
 import '../../res/constants.dart';
+import '../audio_list/file_list.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -27,21 +26,6 @@ class _SplashScreenState extends State<SplashScreen> {
       },
     );
 
-    // //memory
-    // final _intentDataStreamSubscription =
-    //     ReceiveSharingIntent.getMediaStream().listen((List<SharedMediaFile> value) {
-    //       Get.to(PlayerPage(file:
-    //       AudioFiles(name: value[0].type.name, path: value[0].path, size: value[0].duration!), tag: ""));
-    //     }, onError: (err) {
-    //       print("getIntentDataStream error: $err");
-    //     });
-    //
-    // //closed
-    // ReceiveSharingIntent.getInitialMedia().then((List<SharedMediaFile> value) {
-    //   Get.to(PlayerPage(file:
-    //   AudioFiles(name: value[0].type.name, path: value[0].path, size: value[0].duration!), tag: ""));
-    // });
-    //
   }
 
   @override

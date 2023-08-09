@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:untitled/controller/home_controller.dart';
-import 'package:untitled/model/files_model.dart';
+import 'package:untitled/model/audio_file_model.dart';
 import 'package:untitled/view/common_widget/soft_control.dart';
 import 'package:untitled/view/player/widgets/app_bar.dart';
 import '../../res/constants.dart';
+import '../../view_model/controller/player_controller.dart';
 
 class PlayerPage extends StatefulWidget {
   final AudioFiles file;

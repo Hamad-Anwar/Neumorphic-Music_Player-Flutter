@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget {
           const Text('Audio Files',style: TextStyle(fontWeight: FontWeight.bold),),
           GestureDetector(
             onTap: () {
-              Get.to(const FolderList());
+              Get.to(()=>const FolderList());
             },
             child: CircularSoftButton(
               radius: 25,

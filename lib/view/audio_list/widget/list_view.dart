@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
-import 'package:untitled/model/files_model.dart';
-import 'package:untitled/res/constants.dart';
+
+import 'package:untitled/model/audio_file_model.dart';
+
 import 'package:untitled/view/player/player_page.dart';
-import '../../../controller/bottom_player_controller.dart';
-import '../../../controller/file_list_controller.dart';
+
+import '../../../view_model/controller/bottom_player_controller.dart';
+import '../../../view_model/controller/file_list_controller.dart';
 import '../../common_widget/soft_control.dart';
 
 class ListViewFiles extends StatelessWidget {
@@ -19,7 +20,7 @@ class ListViewFiles extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() => controller.audioFiles.isEmpty ?Expanded(
       child: Center(
-        child: Container(
+        child: SizedBox(
           height: 15,
           width: 15,
           child: const CircularProgressIndicator(color: Colors.blue,),
@@ -29,11 +30,8 @@ class ListViewFiles extends StatelessWidget {
         child: AnimatedFileList()));
   }
 }
-
-
 class AnimatedFileList extends StatefulWidget {
   const AnimatedFileList({super.key});
-
   @override
   State<AnimatedFileList> createState() => _AnimatedFileListState();
 }
@@ -46,13 +44,12 @@ class _AnimatedFileListState extends State<AnimatedFileList> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(milliseconds: 100), () {
+    Timer(const Duration(milliseconds: 100), () {
       for (int i = 0; i < controller.audioFiles.length; i++) {
+
         _insertItemWithDelay(i);
       }
     });
-
-
   }
 
   void _insertItemWithDelay(int index) {
@@ -60,8 +57,6 @@ class _AnimatedFileListState extends State<AnimatedFileList> {
       _key.currentState!.insertItem(index);
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -72,10 +67,10 @@ class _AnimatedFileListState extends State<AnimatedFileList> {
       itemBuilder: (context, index,animation) {
         final slideAnimation = Tween<Offset>(
           begin: index % 2 == 0 ? Offset(-1.0, 0.0) : Offset(1.0, 0.0),
-          end: Offset(0.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ).animate(CurvedAnimation(
           parent: animation,
-          curve: Interval(
+          curve: const Interval(
             0.0,
             1.0,
             curve: Curves.easeOut, // You can change the animation curve here
@@ -99,9 +94,7 @@ class _AnimatedFileListState extends State<AnimatedFileList> {
                           if (controller.playedIndex.value == index) {
                             controller.playedIndex.value = 999;
                             bottomController.player.pause();
-
                             bottomController.isPlaying.value = false;
-
                           } else {
                             controller.playedIndex.value = index;
                             bottomController.setFilePath(
@@ -158,7 +151,7 @@ class _AnimatedFileListState extends State<AnimatedFileList> {
                           ),
                           Obx(
                                 () => Text(
-                              controller.audioLength.isNotEmpty
+                              controller.audioLength.isNotEmpty && index<controller.audioLength.length
                                   ? controller.audioLength[index]
                                   : "",
                               style: const TextStyle(

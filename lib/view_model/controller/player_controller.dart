@@ -37,10 +37,17 @@ class HomeController extends GetxController{
     isPlaying.value=false;
    }
    seekForward(){
-    player.seek( Duration(seconds:player.position.inSeconds+ 10));
+    if(player.position.inSeconds<player.duration!.inSeconds-10){
+      player.seek( Duration(seconds:player.position.inSeconds+ 10));
+    }
    }
   seekBack(){
-    player.seek( Duration(seconds: player.position.inSeconds-10));
+
+    if(player.position.inSeconds>10){
+      player.seek( Duration(seconds: player.position.inSeconds-10));
+    }
+
+
   }
 
 

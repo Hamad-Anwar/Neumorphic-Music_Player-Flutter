@@ -1,11 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../controller/folder_controller.dart';
+import '../../../view_model/controller/folder_controller.dart';
+import '../../audio_list/file_list.dart';
 import '../../common_widget/soft_control.dart';
-import '../../Home/file_list.dart';
 
 class Folders extends StatefulWidget {
   const Folders({super.key});
