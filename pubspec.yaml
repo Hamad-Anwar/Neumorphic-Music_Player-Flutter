@@ -42,7 +42,10 @@ dependencies:
   on_audio_query: ^2.9.0
   permission_handler: ^6.0.1
   path: ^1.8.3
-  flutter_neumorphic: ^3.1.1
+  flutter_neumorphic: 
+    git:
+      url: https://github.com/den0206/Flutter-Neumorphic.git
+      ref: feature/remoce_accentcolor
   flutter_storage_path: ^1.0.4
 
 dev_dependencies:
